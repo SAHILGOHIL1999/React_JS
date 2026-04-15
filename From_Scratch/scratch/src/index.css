@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer components {
+  div {
+    @apply flex gap-2 m-3
+  }
+
+  .heading {
+    @apply bg-amber-500 w-auto h-auto text-[20px] p-2 font-bold text-center
+  }
+
+  .btn {
+    @apply bg-orange-700 text-white p-3 text-[18px] font-bold
+  }
+}
