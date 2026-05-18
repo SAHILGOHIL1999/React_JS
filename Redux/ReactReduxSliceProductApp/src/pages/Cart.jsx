@@ -6,7 +6,7 @@ const Cart = () => {
 
   const cartData = useSelector((state) => state.cart.cartItem)  
 
-  // console.log("cartData" , cartData)
+  console.log("cartData" , cartData)
 
   return (
     <>

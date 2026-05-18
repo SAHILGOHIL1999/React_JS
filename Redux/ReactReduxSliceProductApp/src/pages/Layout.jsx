@@ -3,7 +3,6 @@ import Login from "./Login";
 import Product from "./Product";
 import Register from "./Register";
 import Cart from "./Cart";
-import WishList from "./WishList";
 import Error from "./Error";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -20,7 +19,6 @@ const Layout = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/cart" element={<Cart/>}/>
-        <Route path="/wishlist" element={<WishList/>}/>
         <Route path="*" element={<Error/>}/>
       </Routes>
       <Footer/>
