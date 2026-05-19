@@ -1,17 +1,18 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector , useDispatch } from 'react-redux'
 import ProductCard from '../components/ProductCard'
 
 const WishListData = () => {
 
-  const WishListData = useSelector((state) => state.wishlist.wishlist)
+  const WishListData = useSelector((state) => state.wishlist.wishlist)  
 
-  console.log("wishlist", WishListData)
+
+   console.log("wishlist", WishListData)
 
   return (
     <>
-      <div>WishList</div>
-      <ProductCard productData={WishListData} />
+    <div>WishList</div>
+    <ProductCard productData={WishListData}/>
     </>
   )
 }

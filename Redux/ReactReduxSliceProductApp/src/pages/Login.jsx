@@ -1,17 +1,19 @@
 import React from 'react'
-import { useDispatch , useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
-import { loginUser , logoutUser } from '../features/auth/authSlice'
+import { loginUser, logoutUser } from '../features/auth/authSlice'
 import { toast } from 'react-toastify'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 const Login = () => {
 
   const dispatch = useDispatch()
 
-  const {isLogin , user} = useSelector((state) => state.auth)
+  const { isLogin, user } = useSelector((state) => state.auth)
 
-  const [name , setName] = useState("")
+  const [name, setName] = useState("")
 
   const handleLogin = () => {
     dispatch(loginUser(name))
@@ -25,22 +27,37 @@ const Login = () => {
 
   return (
     <>
-    <div className='mt-20'>
+      <div className='mt-20'>
 
-    {
-      isLogin ? (
-        <div>
-          <h2>Welcome {user}</h2>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      ) : (
-        <div className='flex flex-col justify-center items-center bg-blue-700 p-4'>
-          <input type="text" value={name} name="username" onChange={(e) => setName(e.target.value)} />
-          <button onClick={handleLogin}>Login</button>
-        </div>
-      )
-    }
-    </div>
+        {
+          isLogin ? (
+            <div>
+              <h2>Welcome {user}</h2>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          ) : (
+            <div
+              className="modal show"
+              style={{ display: 'block', position: 'initial' }}
+            >
+              <Modal.Dialog>
+                <Modal.Header closeButton>
+                  <Modal.Title>Login User</Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body>
+                  <p>Modal body text goes here.</p>
+                </Modal.Body>
+
+                <Modal.Footer>
+                  <Button variant="secondary">Close</Button>
+                  <Button variant="primary">Save changes</Button>
+                </Modal.Footer>
+              </Modal.Dialog>
+            </div>
+          )
+        }
+      </div>
     </>
   )
 }

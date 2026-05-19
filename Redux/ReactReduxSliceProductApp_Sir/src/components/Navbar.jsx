@@ -1,7 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+
+  const cartLength = useSelector((state) => state.cart.cartItem.length)
+
+  console.log(cartLength);
+  
   return (
     <nav className=" fixed w-full z-20 top-0 start-0 border-b border-default bg-gray-500">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 container">
@@ -62,12 +68,14 @@ const Navbar = () => {
                 Product
               </NavLink>
             </li>
-            <li>
+            <li className="relative">
               <NavLink
                 to="/cart"
                 className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
+
                 Cart
+                <span className="absolute -top-1.5 -right-2.5 text-white h-4 w-4 rounded-full bg-black text-center text-sm flex items-center justify-center">{cartLength}</span>
               </NavLink>
             </li>
             <li>
@@ -84,14 +92,6 @@ const Navbar = () => {
                 className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
                 SignUp
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/wishlist"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-              >
-                WishList
               </NavLink>
             </li>
           </ul>

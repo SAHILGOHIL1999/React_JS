@@ -1,6 +1,6 @@
 import './App.css'
 import Layout from './pages/Layout'
-import Toast from './components/Toast'  
+import Toast from './components/toast'
 
 function App() {
 
