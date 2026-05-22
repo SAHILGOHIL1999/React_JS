@@ -9,6 +9,9 @@ const AddUser = () => {
 
   console.log(name);
   console.log(email);
+  
+  async function addUser(e) {
+  e.preventDefault();
 
 
   async function addUser(){
@@ -22,6 +25,7 @@ const AddUser = () => {
 
     alert("User Added!!")
   }
+
 
   return (
     <>
