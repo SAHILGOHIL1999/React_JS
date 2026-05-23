@@ -19,6 +19,7 @@ const AddUser = () => {
     let user = {
       name,
       email
+      
     }
 
     await axios.post("http://localhost:3000/users" , user).then((data) => console.log(data))
