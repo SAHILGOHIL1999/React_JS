@@ -7,11 +7,11 @@ const ViewUser = () => {
   const [data  , setData] = useState([])
 
   const readUser = async() => {
-    await axios.get("http://localhost:3000/users").then((data) => setData(data.data))
+    await axios.get("http://localhost:3001/users").then((data) => setData(data.data))
   }
 
   const deleteUser = async(id) => {
-    await axios.delete(`http://localhost:3000/users/${id}`)
+    await axios.delete(`http://localhost:3001/users/${id}`)
   }
 
   console.log(data);
