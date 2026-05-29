@@ -1,22 +1,23 @@
+import React from "react";
 import Home from "./Home";
 import About from "./About";
-import Service from "./Service";  
+import Service from "./Service";
 import Navbar from "../Components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Layout = () => {
     return (
-        <>  
-            <BrowserRouter>
-                <Navbar />
+        <BrowserRouter>
+            <Navbar />
+            <div className="pt-20"> 
                 <Routes>
-                    <Route path="/" element = {<Home />} />
-                    <Route path="/about" element = {<About />} />
-                    <Route path="/service" element = {<Service />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/services" element={<Service />} />
                 </Routes>
-            </BrowserRouter>
-        </>
+            </div>
+        </BrowserRouter>
     );
 }
 
-export default Layout;    
+export default Layout;
